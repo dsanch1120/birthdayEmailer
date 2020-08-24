@@ -1,4 +1,4 @@
-# Created by Daniel Sanchez
+i Created by Daniel Sanchez
 # August 24, 2020
 # Reads through .txt file and emails specified user if it is somebody's birthday
 
@@ -17,5 +17,14 @@ if len(current_month) == 1:
     current_month = '0' + current_month
 today = current_month + current_day
 
-print(today)
+#Reads from file
+FILE_NAME = "testBirthdays.txt"
+readFile = open(FILE_NAME, 'r')
+lines = readFile.readlines()
+
+#Checks if there is a birthday today
+for i in lines:
+    if i[:4] == today:
+        birthdays = [i]
+
 
